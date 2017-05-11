@@ -18,7 +18,7 @@
       </view>
       <view class="input">
         <text>Password</text>
-				<input class="input-input" type="text" placeholder="enter password"></input>
+				<input class="input-input" type="text" password="true" placeholder="enter password"></input>
       </view>
     </view>
     <button class="submit-button" bindtap="submit">submit</button>
