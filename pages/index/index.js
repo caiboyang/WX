@@ -1,15 +1,17 @@
 //index.js
 //获取应用实例
 var app = getApp()
+
 var helloData = {
   name: 'World'
 }
-Page({
-  data: helloData, 
+Page(
+{
+  data: helloData,
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
-      url: '../logs/logs'
+      url: '../example/example'
     })
   },
   changeName: function (e) {
@@ -42,3 +44,4 @@ Page({
     })
   }
 })
+

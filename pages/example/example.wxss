@@ -1,0 +1,8 @@
+/* pages/example/example.wxss */
+
+.pic-swiper {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

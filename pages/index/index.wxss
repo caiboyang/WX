@@ -1,21 +1,72 @@
 /**index.wxss**/
 .userinfo {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-around;
+  width: 80%;
+  border-style: solid;
+  border-width: 3px;
+  border-color:#efefef;
+  background-color:#f9f9f9;
 }
 
 .userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
+  width: 192rpx;
+  height: 192rpx;
   margin: 20rpx;
   border-radius: 50%;
 }
 
 .userinfo-nickname {
-  color: #aaa;
+  color: #5a5a5a;
 }
 
-.usermotto {
-  margin-top: 200px;
+.userinfo-gender {
+  font-size:15px;
+  color: #5a5a5a;
+}
+
+.userinfo-time {
+  font-size: 15px;
+  color: #5a5a5a;
+}
+
+
+.bottons {
+  margin-top: 100px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border-style: solid;
+  border-width: 3px;
+  border-color:#efefef;
+  background-color:#f9f9f9;
+
+}
+
+.add-record {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 600rpx;
+  height: 100rpx;
+  margin: 20rpx;
+  border-radius: 3%;
+  background-color:lawngreen;
+  color: #5a5a5a;
+}
+
+.view-record {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 600rpx;
+  height: 100rpx;
+  margin: 20rpx;
+  border-radius: 3%;
+  background-color:white;
+  color: #5a5a5a;
 }

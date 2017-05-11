@@ -15,16 +15,20 @@ App({
       wx.login({
         success: function () {
           wx.getUserInfo({
+            withCredentials: true,
             success: function (res) {
               that.globalData.userInfo = res.userInfo
+              console.log(res.encryptedData)
               typeof cb == "function" && cb(that.globalData.userInfo)
             }
           })
+          
         }
       })
     }
   },
   globalData:{
-    userInfo:null
+    userInfo:null,
+    unionId:null
   }
 })

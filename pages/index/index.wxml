@@ -2,9 +2,17 @@
 <view class="container">
   <view  bindtap="bindViewTap" class="userinfo">
     <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    <view class="userInfo-text">
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <text class="userinfo-gender">
+      gender: female</text>
+      <text class="userinfo-time">
+      last visit: 2017-11-17</text>
+    </view>
   </view>
-  <view class="usermotto">
-    <button bindtap="changeName" class="user-motto">Hi {{name}}!</button>
+  <view class="bottons">
+    <button bindtap="changeName" class="add-record">Add Record</button>
+    <button bindtap="changeName" class="view-record">View Record</button>
   </view>
+
 </view>
