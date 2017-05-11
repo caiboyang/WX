@@ -5,7 +5,7 @@
     <view class="userInfo-text">
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
       <text class="userinfo-gender">
-      gender: {{userInfo.gender}}</text>
+      gender: {{userGender}}</text>
       <text class="userinfo-time">
       last visit: 2017-11-17</text>
     </view>

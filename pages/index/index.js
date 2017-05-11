@@ -2,12 +2,14 @@
 //获取应用实例
 var app = getApp()
 
-var helloData = {
-  name: 'World'
-}
+// var helloData = {
+//   name: 'World'
+// }
 Page(
 {
-  data: helloData,
+  data: {
+    userGender: ''
+  },
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
@@ -46,6 +48,22 @@ Page(
       that.setData({
         userInfo:userInfo
       })
+      if (userInfo.gender == 1){
+        that.setData({
+          userGender: 'Male'
+        })
+      }
+      else if (userInfo.gender == 2)
+      {
+        that.setData({
+          userGender: 'Female'
+        })
+      }
+      else{
+        that.setData({
+          userGender: ''
+        })
+      }
     })
   }
 })
