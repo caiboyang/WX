@@ -1,4 +1,7 @@
 /**app.wxss**/
+@import "dist/index.wxss";
+
+/*
 .container {
   height: 100%;
   display: flex;
@@ -7,4 +10,4 @@
   justify-content: space-around;
   padding: 180rpx 0;
   box-sizing: border-box;
-} 
+} */

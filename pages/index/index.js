@@ -14,24 +14,29 @@ Page(
       url: '../example/example'
     })
   },
-  changeName: function (e) {
-    // sent data change to view
-    // if (helloData.name == 'World'){
-    //   this.setData({ 
-    //     name : 'WeChat'
-    //     })
-    //   helloData.name = 'Wechat'
-    // }
-    // else{
-    //   this.setData({
-    //     name: 'World'
-    //   })
-    //   helloData.name = 'World'
-    // }
-    this.name = this.name == 'Wechat' ? 'World' : 'Wechat'
-    this.setData({
-      name: this.name})
+  changeName: function(){
+    wx.navigateTo({
+      url: '../Add/index',
+    })
   },
+  // changeName: function (e) {
+  //   // sent data change to view
+  //   // if (helloData.name == 'World'){
+  //   //   this.setData({ 
+  //   //     name : 'WeChat'
+  //   //     })
+  //   //   helloData.name = 'Wechat'
+  //   // }
+  //   // else{
+  //   //   this.setData({
+  //   //     name: 'World'
+  //   //   })
+  //   //   helloData.name = 'World'
+  //   // }
+  //   this.name = this.name == 'Wechat' ? 'World' : 'Wechat'
+  //   this.setData({
+  //     name: this.name})
+  // },
   onLoad: function () {
     console.log('onLoad')
     var that = this

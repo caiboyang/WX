@@ -5,14 +5,14 @@
     <view class="userInfo-text">
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
       <text class="userinfo-gender">
-      gender: female</text>
+      gender: {{userInfo.gender}}</text>
       <text class="userinfo-time">
       last visit: 2017-11-17</text>
     </view>
   </view>
   <view class="bottons">
     <button bindtap="changeName" class="add-record">Add Record</button>
-    <button bindtap="changeName" class="view-record">View Record</button>
+    <button bindtap="viewName" class="view-record">View Record</button>
   </view>
 
 </view>
