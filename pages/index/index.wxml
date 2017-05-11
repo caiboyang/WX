@@ -10,9 +10,12 @@
       last visit: 2017-11-17</text>
     </view>
   </view>
-  <view class="bottons">
-    <button bindtap="changeName" class="add-record">Add Record</button>
-    <button bindtap="viewName" class="view-record">View Record</button>
+
+  <view class="zan-panel" style="width: 100%">
+    <view class="zan-btns">
+      <button bindtap="changeName" class="zan-btn zan-btn--primary" >Add Record</button>
+      <button bindtap="viewName" class="zan-btn">View Record</button>
+    </view>
   </view>
 
 </view>
