@@ -8,3 +8,34 @@
   padding: 180rpx 0;
   box-sizing: border-box;
 } 
+
+.horizontal-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  box-sizing: border-box;
+} 
+
+.input-list{
+	padding: 0 20rpx;
+	margin: 20rpx 0;
+	background: #fff;
+	border-top: 1rpx solid #ddd;
+	border-bottom: 1rpx solid #ddd;
+}
+
+.input {
+  padding: 20rpx;
+	line-height: 2;
+  width:100%;
+	display: flex;
+	font-size: 30rpx;
+	border-top: 1rpx solid #e8e8e8;
+}
+
+.input-input {
+  padding: 0 20rpx;
+	flex:1;
+}

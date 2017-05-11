@@ -22,6 +22,7 @@
   color: #5a5a5a;
 }
 
+
 .userinfo-gender {
   font-size:15px;
   color: #5a5a5a;
@@ -55,8 +56,8 @@
   height: 100rpx;
   margin: 20rpx;
   border-radius: 3%;
-  background-color:lawngreen;
-  color: #5a5a5a;
+  background-color: deepskyblue;
+  color: white;
 }
 
 .view-record {

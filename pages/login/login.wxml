@@ -1,0 +1,27 @@
+<!--pages/login/login.wxml-->
+<view class="container">
+  <view class="horizontal-container">
+    <view  bindtap="bindViewTap" class="userinfo">
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <view class="userInfo-text">
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </view>
+    </view>
+    <image class="arrows" src="../../images/arrows.gif"></image>
+    <image class="userinfo-avatar" src="../../images/app.gif"></image>
+  </view>
+  <view class="appuserinfo">
+    <view class="input-list">
+      <view class="input">
+        <text>Username</text>
+				<input class="input-input" type="text" placeholder="enter username"></input>
+      </view>
+      <view class="input">
+        <text>Password</text>
+				<input class="input-input" type="text" placeholder="enter password"></input>
+      </view>
+    </view>
+    <button class="submit-button" bindtap="submit">submit</button>
+
+  </view>
+</view>
