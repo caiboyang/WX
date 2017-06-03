@@ -14,7 +14,7 @@
   <view class="zan-panel" style="width: 100%">
     <view class="zan-btns">
       <button bindtap="changeName" class="zan-btn zan-btn--primary" >Add Record</button>
-      <button bindtap="viewName" class="zan-btn">View Record</button>
+      <button bindtap="bindViewTap" class="zan-btn">View Record</button>
     </view>
   </view>
 

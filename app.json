@@ -2,9 +2,12 @@
   
   "pages":[
     "pages/login/login",
+    "pages/logs/logs",
+    "pages/viewSugar/viewSugar",
+    "pages/viewPressure/viewPressure",
+    "pages/viewFat/viewFat",
     "pages/index/index",
     "pages/example/example",
-    "pages/logs/logs",
     "pages/Add/index"
   ],
   "window": {

@@ -1,0 +1,13 @@
+<!--pages/view/view.wxml-->
+<view class="container">
+  <text class="title">Blood Fat Record</text>
+  <view class="chart-container">
+    <!--
+    <canvas canvas-id="areaCanvas" class="canvas" bindtouchstart="touchHandler"></canvas>
+    -->
+    <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas" bindtouchstart="touchHandler"></canvas>
+    <view class="horizontal-container">
+      <button type="primary" bindtap="navigateSugar">Blood Sugar</button>
+      <button type="primary" bindtap="navigatePressure">Blood Pressure</button>    </view>
+  </view>
+</view>

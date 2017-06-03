@@ -13,6 +13,11 @@ Page({
   },
 
   onShow: function () {
+  },
+  uploadData: function () {
+    wx.navigateBack({
+      delta: 1,
+    })
   }
 
   // /**

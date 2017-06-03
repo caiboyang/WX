@@ -1,5 +1,6 @@
 // pages/login/login.js
 var app = getApp()
+var API_URL = "localhost:3000";
 
 Page({
 

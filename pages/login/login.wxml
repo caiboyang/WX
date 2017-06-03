@@ -21,7 +21,7 @@
 				<input class="input-input" type="text" password="true" placeholder="enter password"></input>
       </view>
     </view>
-    <button class="submit-button" bindtap="submit">submit</button>
+    <button class="zan-btn zan-btn--primary" bindtap="submit">submit</button>
 
-  </view>
+  </view> 
 </view>

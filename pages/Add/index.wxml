@@ -46,7 +46,7 @@
   </view>
   <view class="zan-panel">
     <view class="zan-btns">
-      <button class="zan-btn zan-btn--primary">Upload</button>
+      <button class="zan-btn zan-btn--primary" bindtap="uploadData">Upload</button>
     </view>
   </view>
 </view>
