@@ -17,8 +17,12 @@ App({
           wx.getUserInfo({
             withCredentials: true,
             success: function (res) {
+              that.login({
+                code: res.code,
+                iv: res.iv,
+                encryptedData: encodeURIComponent(res.encryptedData),
+              })
               that.globalData.userInfo = res.userInfo
-              console.log(res.encryptedData)
               typeof cb == "function" && cb(that.globalData.userInfo)
             }
           })
@@ -27,8 +31,24 @@ App({
       })
     }
   },
+  login: function (param) {
+    var that = this;
+    wx.request({
+      url: 'localhost:3000/Index/weixin_login',
+      data: param,
+      header: {
+        'content-type': "application/json",
+      },
+      success: function (res) {
+        var data = JSON.parse(res.data.trim());
+        that.unionId = data.unionId;
+        wx.setStorageSync('sessionid', data.sessionid);
+      }
+    })
+  },
   globalData:{
     userInfo:null,
-    unionId:null
+    unionId:null,
+    BloodFat: null
   }
 })

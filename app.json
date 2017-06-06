@@ -2,13 +2,12 @@
   
   "pages":[
     "pages/login/login",
-    "pages/logs/logs",
-    "pages/viewSugar/viewSugar",
     "pages/viewPressure/viewPressure",
+    "pages/viewSugar/viewSugar",
     "pages/viewFat/viewFat",
     "pages/index/index",
-    "pages/example/example",
-    "pages/Add/index"
+    "pages/add/add",
+    "pages/success/success"
   ],
   "window": {
     "navigationBarBackgroundColor": "#FAFAFA",

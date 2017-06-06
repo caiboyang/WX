@@ -3,13 +3,10 @@ var app = getApp();
 var lineChart = null;
 Page({
   data: {
-    chartTitle : 'Blood Sugar Record',
-    curChart : 0
   },
   touchHandler: function (e) {
     console.log(lineChart.getCurrentDataIndex(e));
     lineChart.showToolTip(e, {
-      // background: '#7cb5ec'
     });
   },
   createSimulationData: function () {
@@ -17,9 +14,8 @@ Page({
     var data = [];
     for (var i = 0; i < 10; i++) {
       categories.push('2016-' + (i + 1));
-      data.push(Math.random() * (20 - 10) + 10);
+      data.push(Math.random() * (7 - 2) + 2);
     }
-    // data[4] = null;
     return {
       categories: categories,
       data: data
@@ -30,20 +26,6 @@ Page({
       url: '../view/view'
     })
   },
- /* updateData: function () {
-    var simulationData = this.createSimulationData();
-    var series = [{
-      name: 'Result 1',
-      data: simulationData.data,
-      format: function (val, name) {
-        return val.toFixed(2);
-      }
-    }];
-    lineChart.updateData({
-      categories: simulationData.categories,
-      series: series
-    });
-  }, */
   navigateSugar: function (e) {
     wx.redirectTo({
       url: '../viewSugar/viewSugar'
@@ -73,12 +55,6 @@ Page({
       series: [{
         name: 'Result 1',
         data: simulationData.data,
-        format: function (val, name) {
-          return val.toFixed(2);
-        }
-      }, {
-        name: 'Result 2',
-        data: [11, 24, 29, 15, null, 21, 32, 23, 45, 21],
         format: function (val, name) {
           return val.toFixed(2);
         }

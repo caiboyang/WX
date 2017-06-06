@@ -3,13 +3,10 @@ var app = getApp();
 var lineChart = null;
 Page({
   data: {
-    chartTitle : 'Blood Sugar Record',
-    curChart : 0
   },
   touchHandler: function (e) {
     console.log(lineChart.getCurrentDataIndex(e));
     lineChart.showToolTip(e, {
-      // background: '#7cb5ec'
     });
   },
   createSimulationData: function () {
@@ -17,9 +14,8 @@ Page({
     var data = [];
     for (var i = 0; i < 10; i++) {
       categories.push('2016-' + (i + 1));
-      data.push(Math.random() * (20 - 10) + 10);
+      data.push(Math.random() * (120 - 80) + 80);
     }
-    // data[4] = null;
     return {
       categories: categories,
       data: data
@@ -30,20 +26,6 @@ Page({
       url: '../view/view'
     })
   },
-  /*updateData: function () {
-    var simulationData = this.createSimulationData();
-    var series = [{
-      name: 'Result 1',
-      data: simulationData.data,
-      format: function (val, name) {
-        return val.toFixed(2);
-      }
-    }];
-    lineChart.updateData({
-      categories: simulationData.categories,
-      series: series
-    });
-  },*/
   navigateFat: function (e) {
     wx.redirectTo({
       url: '../viewFat/viewFat'
@@ -64,6 +46,10 @@ Page({
     }
 
     var simulationData = this.createSimulationData();
+    var lowData = [];
+    for (var i = 0; i < 10; i++) {
+      lowData.push(simulationData.data[i]-(Math.random() * 30)-20);
+    }
     lineChart = new wxCharts({
       canvasId: 'lineCanvas',
       type: 'line',
@@ -71,16 +57,16 @@ Page({
       animation: true,
       background: '#f5f5f5',
       series: [{
-        name: 'Result 1',
+        name: 'High',
         data: simulationData.data,
         format: function (val, name) {
-          return val.toFixed(2);
+          return val.toFixed(0);
         }
       }, {
-        name: 'Result 2',
-        data: [11, 24, 29, 15, null, 21, 32, 23, 45, 21],
+        name: 'Low',
+        data: lowData,
         format: function (val, name) {
-          return val.toFixed(2);
+          return val.toFixed(0);
         }
       }],
       xAxis: {
@@ -89,7 +75,7 @@ Page({
       yAxis: {
         title: 'Test Result',
         format: function (val) {
-          return val.toFixed(2);
+          return val.toFixed(0);
         },
         min: 0
       },

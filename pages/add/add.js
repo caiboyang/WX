@@ -1,4 +1,7 @@
 // addRecord.js
+
+var API_URL = 'localhost:8080';
+
 Page({
 
   /**
@@ -17,8 +20,8 @@ Page({
   uploadData: function () {
     wx.navigateBack({
       delta: 1,
-    })
-  }
+      })
+    },
 
   // /**
   //  * 生命周期函数--监听页面加载

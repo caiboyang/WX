@@ -5,13 +5,14 @@
 
   <view class="doc-title">Upload Form</view>
 
-  <view class="zan-form">
+  <form class="zan-form" action="/upload.php" method="post">
     <view class="zan-cell zan-form__item">
       <text class="zan-form__title">Blood Sugar</text>
       <input
         class="zan-form__input zan-cell__bd"
         type="digit"
         placeholder="Upload your Blood Sugar Here"
+        name="BSugar"
       />
     </view>
     <view class="zan-cell zan-form__item">
@@ -22,6 +23,7 @@
           type="number"
           maxlength="3"
           placeholder="High"
+          name ="PreHigh"
         />
       </view>
       <view class=".zan-form__textarea textarea">
@@ -30,6 +32,7 @@
           type="number"
           maxlength="3"
           placeholder="Low"
+          name="PreLow"
         />
       </view>
     </view>
@@ -40,14 +43,13 @@
           class="zan-form__input zan-cell__bd"
           type="digit"
           placeholder="Upload your Blood Fat Here"
+          name="BFat"
         />
       </view>
     </view>
-  </view>
-  <view class="zan-panel">
     <view class="zan-btns">
-      <button class="zan-btn zan-btn--primary" bindtap="uploadData">Upload</button>
+      <button type="submit" class="zan-btn zan-btn--primary" bindtap="uploadData">Upload</button>
     </view>
-  </view>
+  </form>
 </view>
 

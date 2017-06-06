@@ -1,6 +1,5 @@
 // pages/login/login.js
 var app = getApp()
-var API_URL = "localhost:3000";
 
 Page({
 
@@ -11,7 +10,7 @@ Page({
   
   },
   submit: function () {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../index/index',
     })
   },
@@ -23,8 +22,16 @@ Page({
       //更新数据
       that.setData({
         userInfo: userInfo
-  })
-  })}
+      })
+    })
+    console.log(app.globalData.unionId)
+    if (app.globalData.unionId != null) {
+    wx.redirectTo({
+      url: '../index/index'
+    })
+    }
+
+  }
 
   /**
    * 生命周期函数--监听页面初次渲染完成

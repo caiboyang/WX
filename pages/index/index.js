@@ -18,7 +18,7 @@ Page(
   },
   changeName: function(){
     wx.navigateTo({
-      url: '../Add/index',
+      url: '../add/add',
     })
   },
   // changeName: function (e) {
@@ -43,10 +43,9 @@ Page(
     console.log('onLoad')
     var that = this
     //调用应用实例的方法获取全局数据
-    app.getUserInfo(function(userInfo){
-      //更新数据
-      that.setData({
-        userInfo:userInfo
+    var userInfo = app.globalData.userInfo
+      this.setData({
+        userInfo: userInfo
       })
       if (userInfo.gender == 1){
         that.setData({
@@ -64,7 +63,7 @@ Page(
           userGender: ''
         })
       }
-    })
+
   }
 })
 

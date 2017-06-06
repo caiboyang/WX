@@ -2,9 +2,6 @@
 <view class="container">
   <text class="title">Blood Sugar Record</text>
   <view class="chart-container">
-    <!--
-    <canvas canvas-id="areaCanvas" class="canvas" bindtouchstart="touchHandler"></canvas>
-    -->
     <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas" bindtouchstart="touchHandler"></canvas>
     <view class="horizontal-container">
       <button type="primary" bindtap="navigateFat">Blood Fat</button>
