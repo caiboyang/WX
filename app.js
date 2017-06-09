@@ -34,21 +34,19 @@ App({
   login: function (param) {
     var that = this;
     wx.request({
-      url: 'localhost:3000/Index/weixin_login',
+      url: 'https://localhost:9000/login',
       data: param,
       header: {
         'content-type': "application/json",
       },
       success: function (res) {
         var data = JSON.parse(res.data.trim());
-        that.unionId = data.unionId;
-        wx.setStorageSync('sessionid', data.sessionid);
+        wx.setStorage('unionid', data.unionid)
+        wx.setStorage('sessionid', data.sessionid);
       }
     })
   },
   globalData:{
-    userInfo:null,
-    unionId:null,
-    BloodFat: null
+    userInfo:null
   }
 })

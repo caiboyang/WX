@@ -10,18 +10,18 @@
     <image class="arrows" src="../../images/arrows.gif"></image>
     <image class="userinfo-avatar" src="../../images/app.gif"></image>
   </view>
-  <view class="appuserinfo">
+  <form class="appuserinfo" bindsubmit="submit">
     <view class="input-list">
       <view class="input">
         <text>Username</text>
-				<input class="input-input" type="text" placeholder="enter username"></input>
+				<input class="input-input" type="text" name="username" placeholder="enter username"></input>
       </view>
       <view class="input">
         <text>Password</text>
-				<input class="input-input" type="text" password="true" placeholder="enter password"></input>
+				<input class="input-input" type="text" name="password" password="true" placeholder="enter password"></input>
       </view>
     </view>
-    <button class="zan-btn zan-btn--primary" bindtap="submit">submit</button>
-
-  </view> 
+    <button class="zan-btn zan-btn--primary" type="submit" formType="submit">Submit</button>
+    <view style="color:red;font-size:75%;">{{tip}}</view>
+  </form> 
 </view>

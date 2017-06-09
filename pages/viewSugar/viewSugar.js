@@ -9,6 +9,7 @@ Page({
     lineChart.showToolTip(e, {
     });
   },
+    /* dummy code, change to request once get business account */
   createSimulationData: function () {
     var categories = [];
     var data = [];
