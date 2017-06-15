@@ -12,19 +12,24 @@ Page({
   createSimulationData: function () {
     var categories = [];
     var data = [];
-    for (var i = 0; i < 10; i++) {
-      categories.push('2016-' + (i + 1));
-      data.push(Math.random() * (7 - 2) + 2);
-    }
+    wx.request({
+      url: 'https://localhost:9000/bloodFat',
+      data: {
+        id:app.globalData.unionId,
+      },
+      header: {
+        'content-type': "application/json",
+      },
+      success: function (res) {
+        var data = JSON.parse(res.data.trim());
+        catagories = data.catagories;
+        data = data.data;
+      }
+    })
     return {
       categories: categories,
       data: data
     }
-  },
-  changeChart: function () {
-    wx.navigateTo({
-      url: '../view/view'
-    })
   },
   navigateSugar: function (e) {
     wx.redirectTo({

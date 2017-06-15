@@ -5,7 +5,7 @@
 
   <view class="doc-title">Upload Form</view>
 
-  <form class="zan-form" action="/upload.php" method="post">
+  <form class="zan-form" bindsubmit="uploadData">
     <view class="zan-cell zan-form__item">
       <text class="zan-form__title">Blood Sugar</text>
       <input
@@ -48,7 +48,7 @@
       </view>
     </view>
     <view class="zan-btns">
-      <button type="submit" class="zan-btn zan-btn--primary" bindtap="uploadData">Upload</button>
+      <button type="submit" class="zan-btn zan-btn--primary" formType="submit">Upload</button>
     </view>
   </form>
 </view>

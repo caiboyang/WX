@@ -10,20 +10,31 @@ Page({
   
   },
   submit: function (e) {
-  if (e.detail.value.username != "Android" || e.detail.value.password != "123456") {
-      this.setData({
-        tip: '*Invalid Username & Password Combination',
-        userName: '',
-        psw: ''
-      })
-  } else {
-    this.setData({
-      tip: ''
+    wx.request({
+      url: 'https://localhost:9000/appLogin',
+      data: {
+        userName: e.detail.value.username,
+        password: e.detail.value.password
+      },
+      header: {
+        'content-type': "application/json",
+      },
+      success: function (res) {
+        this.setData({
+          tip: ''
+        })
+        wx.redirectTo({
+          url: '../index/index',
+        })
+      },
+      fail: function (res) {
+        this.setData({
+          tip: '*Invalid username & password combination. Try again',
+          userName: '',
+          psw: ''
+        })
+      }
     })
-    wx.redirectTo({
-      url: '../index/index',
-    })
-  }
   },
   onLoad: function () {
     console.log('onLoad')
@@ -37,6 +48,7 @@ Page({
       })
     })
     wx.getStorage({
+    /* dummy code, change to request once get business account */
       key: 'unionid',
       success: function (res) {
         wx.redirectTo({

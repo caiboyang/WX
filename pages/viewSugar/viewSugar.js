@@ -9,14 +9,23 @@ Page({
     lineChart.showToolTip(e, {
     });
   },
-    /* dummy code, change to request once get business account */
   createSimulationData: function () {
     var categories = [];
     var data = [];
-    for (var i = 0; i < 10; i++) {
-      categories.push('2016-' + (i + 1));
-      data.push(Math.random() * (15 - 5) + 5);
-    }
+    wx.request({
+      url: 'https://localhost:9000/bloodSugar',
+      data: {
+        id: app.globalData.unionId,
+      },
+      header: {
+        'content-type': "application/json",
+      },
+      success: function (res) {
+        var data = JSON.parse(res.data.trim());
+        catagories = data.catagories;
+        data = data.data;
+      }
+    })
     return {
       categories: categories,
       data: data

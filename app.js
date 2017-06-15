@@ -43,10 +43,14 @@ App({
         var data = JSON.parse(res.data.trim());
         wx.setStorage('unionid', data.unionid)
         wx.setStorage('sessionid', data.sessionid);
+        that.globalData.unionId = data.unionid;
+        that.globalData.unionId = data.sessionid;
       }
     })
   },
   globalData:{
-    userInfo:null
+    userInfo:null,
+    unionId:null,
+    sessionId:null
   }
 })

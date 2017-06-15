@@ -9,22 +9,49 @@ Page({
     lineChart.showToolTip(e, {
     });
   },
-  createSimulationData: function () {
+  getPreHigh: function () {
     var categories = [];
     var data = [];
-    for (var i = 0; i < 10; i++) {
-      categories.push('2016-' + (i + 1));
-      data.push(Math.random() * (120 - 80) + 80);
-    }
+    wx.request({
+      url: 'https://localhost:9000/BloodPressureHigh',
+      data: {
+        id: app.globalData.unionId,
+      },
+      header: {
+        'content-type': "application/json",
+      },
+      success: function (res) {
+        var data = JSON.parse(res.data.trim());
+        catagories = data.catagories;
+        data = data.data;
+      }
+    })
     return {
       categories: categories,
       data: data
     }
   },
-  changeChart: function () {
-    wx.navigateTo({
-      url: '../view/view'
+  getPreLow: function () {
+    var categories = [];
+    var data = [];
+    wx.request({
+      url: 'https://localhost:9000/BloodPressureLow',
+      data: {
+        id: app.globalData.unionId,
+      },
+      header: {
+        'content-type': "application/json",
+      },
+      success: function (res) {
+        var data = JSON.parse(res.data.trim());
+        catagories = data.catagories;
+        data = data.data;
+      }
     })
+    return {
+      categories: categories,
+      data: data
+    }
   },
   navigateFat: function (e) {
     wx.redirectTo({
@@ -45,26 +72,23 @@ Page({
       console.error('getSystemInfoSync failed!');
     }
 
-    var simulationData = this.createSimulationData();
-    var lowData = [];
-    for (var i = 0; i < 10; i++) {
-      lowData.push(simulationData.data[i]-(Math.random() * 30)-20);
-    }
+    var highData = this.getPreHigh();
+    var lowData = this.getPreLow();
     lineChart = new wxCharts({
       canvasId: 'lineCanvas',
       type: 'line',
-      categories: simulationData.categories,
+      categories: highData.categories,
       animation: true,
       background: '#f5f5f5',
       series: [{
         name: 'High',
-        data: simulationData.data,
+        data: highData.data,
         format: function (val, name) {
           return val.toFixed(0);
         }
       }, {
         name: 'Low',
-        data: lowData,
+        data: lowData.data,
         format: function (val, name) {
           return val.toFixed(0);
         }
